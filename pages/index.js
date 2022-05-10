@@ -1,4 +1,4 @@
-import BarraNavegacao from "../src/components/barra-nevegacao";
+import BarraNavegacao from "../src/components/barra-navegacao";
 import Cards from "../src/components/cards";
 import { Carrossel } from "../src/components/carrossel";
 
