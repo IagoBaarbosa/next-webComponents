@@ -28,16 +28,11 @@ const Cards = () => {
       {listaCards.map((item) => {
         return (
           <>
-            <Card>
-              <Card.Img variant="top" src={item.src} />
-              <Card.Body>
-                <Card.Title>{item.titulo}</Card.Title>
-                <Card.Text>{item.texto}</Card.Text>
-              </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">feita em 2021</small>
-              </Card.Footer>
-            </Card>
+            <CardGaleria
+              titulo={item.titulo}
+              texto={item.texto}
+              src={item.src}
+            />
           </>
         );
       })}
@@ -46,3 +41,18 @@ const Cards = () => {
 };
 
 export default Cards;
+function CardGaleria(props) {
+  const { titulo, texto, src } = props;
+  return (
+    <Card>
+      <Card.Img variant="top" src={src} />
+      <Card.Body>
+        <Card.Title>{titulo}</Card.Title>
+        <Card.Text>{texto}</Card.Text>
+      </Card.Body>
+      <Card.Footer>
+        <small className="text-muted">feita em 2021</small>
+      </Card.Footer>
+    </Card>
+  );
+}

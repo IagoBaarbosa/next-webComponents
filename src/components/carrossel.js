@@ -1,20 +1,29 @@
 import Image from "next/image";
 import Carousel from "react-bootstrap/Carousel";
 
+const listaCorousel = [
+  {
+    url: "/assets/img/1art.jpeg",
+  },
+  {
+    url: "/assets/img/art2.jpeg",
+  },
+  {
+    url: "/assets/img/img3.jfif",
+  },
+];
+
 export function Carrossel() {
   return (
     <Carousel>
-      <Carousel.Item>
-        <CarrosselItemConteudo urldaimagem="/assets/img/1art.jpeg" />
-      </Carousel.Item>
-
-      <Carousel.Item>
-        <CarrosselItemConteudo urldaimagem="/assets/img/art2.jpeg" />
-      </Carousel.Item>
-
-      <Carousel.Item>
-        <CarrosselItemConteudo urldaimagem="/assets/img/img3.jfif" />
-      </Carousel.Item>
+      {listaCorousel.map((item, index) => {
+        return (
+          <Carousel.Item key={index}>
+            <CarrosselItemConteudo urldaimagem={item.url} />
+          </Carousel.Item>
+        );
+      })}
+      ;
     </Carousel>
   );
 }
